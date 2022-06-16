@@ -42,18 +42,23 @@ namespace LineComparisionProblem
             double y4 = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine("........................");
 
-            double LenghtofLineOne = Math.Sqrt(Math.Pow((x2 - x1), 2) + Math.Pow((y2 - y1), 2));
-            Console.WriteLine("Lenght of First Line is : {0}", LenghtofLineOne);
+            double LenghtofLineOne = Math.Sqrt(Math.Pow((x2-x1), 2) + Math.Pow((y2-y1), 2));
+            Console.WriteLine("Lenght of First Line is : {0}",LenghtofLineOne);
             Console.WriteLine("........................");
             double LenghtofLineTwo = Math.Sqrt(Math.Pow((x4 - x3), 2) + Math.Pow((y4 - y3), 2));
             Console.WriteLine("Lenght of Second Line is : {0}", LenghtofLineTwo);
-            if (LenghtofLineOne == LenghtofLineTwo)
+            int Result = LenghtofLineOne.CompareTo(LenghtofLineTwo);
+            if (Result>0)
             {
-                Console.WriteLine("First Line and Second Lines are Equal");
+                Console.WriteLine("First Line is Greater than Second Line");
+            }
+            else if(Result<0)
+            {
+                Console.WriteLine("Second Line is Greater tahn First Line");
             }
             else
             {
-                Console.WriteLine("First Line and Second Lines are not Equal");
+                Console.WriteLine("First Line and Second Lines are Equal");
             }
         }
     }
